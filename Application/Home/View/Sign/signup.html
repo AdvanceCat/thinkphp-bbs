@@ -1,0 +1,81 @@
+<include file="block:header" />
+<div class="container">
+    <div class="row">
+        <div class="panel talk-form">
+            <form id="talk-signup" action="index.php?m=user&a=signup" method="post" class="form-horizontal">
+                <div class="panel-heading">
+                    欢迎加入WeMall开源微商城论坛-www.inuoer.com </div>
+                <div class="form-group">
+                    <label for="email" class="col-md-3 control-label">邮箱：</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" id="email" name="email" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-md-3 control-label">密码：</label>
+                    <div class="col-md-8">
+                        <input type="password" class="form-control" id="password" name="password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="repassword" class="col-md-3 control-label">确认密码：</label>
+                    <div class="col-md-8">
+                        <input type="password" class="form-control" name="repassword">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-md-3 control-label">用户名：</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" id="username" name="username" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="verify" class="col-md-3 control-label">验证码：</label>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" name="verify" id="captcha">
+                    </div>
+                    <div class="col-md-3">
+                        <img src="<{:U('Home/sign/Verify')}>" alt="" id="verify">
+                    </div>
+                    <div class="col-md-3">
+                        <a href="javascript:;" id="reloadVerify" title="换一张">换一张？</a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-3 col-md-2">
+                        <button type="submit" class="btn btn-primary">注册</button>
+                    </div>
+                </div>
+                <input type="hidden" name="_token" value="8792a268fdf401fb5fd94dc1a99bd300_8179d8992df7014ad2899dd866100561" />
+            </form>
+        </div>
+    </div>
+</div>
+<include file="block:footer" />
+
+<script>
+    $("#talk-signup").validate({
+
+        submitHandler: function(e) {
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                url: "<{:U('Home/sign/signup')}>",
+                data: $("#talk-signup").serialize(),
+                success: function(data) {
+                    if (data.status == 0) {
+                        bootbox.alert(data.info);
+                        return false;
+                    } else {
+                        window.location.href = data.url;
+                    }
+
+                }
+            })
+        }
+    });
+    $('#reloadVerify').click(function() {
+        var captchaUrl = "<{:U('Home/sign/Verify')}>?t=";
+        $('#verify').attr('src', captchaUrl + Math.random());
+    });
+</script>

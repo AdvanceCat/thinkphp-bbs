@@ -1,0 +1,12 @@
+[ 2017-03-13T00:09:09+08:00 ] ::1 /bbs/index.php?m=topic&a=detail&tid=200
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000401s ]
+ERR: 无法加载模块:Topic
+
+[ 2017-03-13T00:09:12+08:00 ] ::1 /bbs/index.php?m=topic&a=detail&tid=263
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000341s ]
+ERR: 无法加载模块:Topic
+

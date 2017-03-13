@@ -1,0 +1,12 @@
+[ 2017-02-11T22:55:53+08:00 ] ::1 /bbs/index.php/Public/upload/avatar/000/00/12/30_avatar_middle.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000490s ]
+ERR: 无法加载模块:Public
+
+[ 2017-02-11T22:55:53+08:00 ] ::1 /bbs/index.php/Public/img/no_avatar_middle.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000595s ]
+ERR: 无法加载模块:Public
+

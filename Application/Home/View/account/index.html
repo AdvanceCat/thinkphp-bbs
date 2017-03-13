@@ -1,0 +1,57 @@
+<include file="block:header" />
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h4>账号设置</h4>
+                </div>
+                <div class="panel-body">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="<{:U('Home/account/index')}>">基本信息</a></li>
+                        <li><a href="<{:U('Home/account/avatar')}>">修改头像</a></li>
+                        <li><a href="<{:U('Home/account/password')}>">密码安全</a></li>
+                    </ul>
+                    <div class="talk-account">
+                        <form class="form-horizontal" action="<{:U('Home/account/index')}>" method="post">
+                            <fieldset>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="username">用户名：</label>
+                                    <div class="col-md-4">
+                                        <p><{$data.name}></p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="gender">性别：</label>
+                                    <div class="col-md-4">
+                                        <input type="radio" name="sex" id="gender" value="1" <if condition="$data.sex eq 1"> checked="checked" </if>>男
+                                        <input type="radio" name="sex" id="sex" value="0" <if condition="$data.sex eq 0"> checked="checked" </if>>女
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="area">地区：</label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" id="area" name="area" value="<{$data.area}>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="area">个人介绍：</label>
+                                    <div class="col-md-6">
+                                        <textarea class="form-control" name="description" rows="6" cols="5"><{$data.description}></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-6">
+                                        <button type="submit" class="btn btn-primary">保存</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <input type="hidden" name="_token" value="883016ff65164ad380e2bf2f5eabd176_a055c9a3cb51f0d7b796a65ddabc6e16"></form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<include file="block:footer" />
